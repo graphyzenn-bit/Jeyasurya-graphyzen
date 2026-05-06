@@ -4,130 +4,461 @@
 <meta charset="UTF-8"> 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jeyasurya R V — Digital Marketer & Creative Designer</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Syne:wght@400;500;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{
---bg:#080B12;
---bg2:#0D1120;
---bg3:#111827;
---accent:#E8C547;
---accent2:#F0A500;
---text:#F0EDE6;
---muted:#7A8BA0;
---border:rgba(255,255,255,0.07);
---card:#0F1520;
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box
 }
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;overflow-x:hidden;cursor:none}
 
-.cursor{position:fixed;width:10px;height:10px;background:var(--accent);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform 0.1s;mix-blend-mode:difference}
-.cursor-trail{position:fixed;width:32px;height:32px;border:1px solid rgba(232,197,71,0.4);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:all 0.15s ease}
+:root{
+  --bg:#080B12;
+  --bg2:#0D1120;
+  --bg3:#111827;
+  --accent:#E8C547;
+  --accent2:#F0A500;
+  --text:#F0EDE6;
+  --muted:#7A8BA0;
+  --border:rgba(255,255,255,0.07);
+  --card:#0F1520;
+}
 
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.5rem 4rem;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
-.logo{font-family:'Clash Display',sans-serif;font-size:1.1rem;font-weight:600;letter-spacing:0.12em;color:var(--text)}
-.logo span{color:var(--accent)}
-.nav-links{display:flex;gap:2.5rem;list-style:none}
-.nav-links a{font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s}
-.nav-links a:hover{color:var(--accent)}
+html{
+  scroll-behavior:smooth
+}
 
-.hero{min-height:100vh;display:flex;align-items:center;padding:8rem 4rem 4rem;position:relative;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 80% 50%, rgba(232,197,71,0.06) 0%, transparent 70%),radial-gradient(ellipse 40% 40% at 20% 80%, rgba(99,74,255,0.06) 0%, transparent 60%);pointer-events:none}
-.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;mask-image:radial-gradient(ellipse at center,black 0%,transparent 70%)}
-.hero-content{position:relative;z-index:2;max-width:900px}
-.hero-tag{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(232,197,71,0.1);border:1px solid rgba(232,197,71,0.25);border-radius:100px;padding:0.4rem 1rem;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:2rem}
-.hero-tag::before{content:'';width:6px;height:6px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
-.hero-name{font-family:'Clash Display',sans-serif;font-size:clamp(3.5rem,7vw,6.5rem);font-weight:700;line-height:0.95;letter-spacing:-0.02em;margin-bottom:1.5rem}
-.hero-name .line2{color:var(--accent)}
-.hero-desc{font-size:1.1rem;color:var(--muted);max-width:500px;line-height:1.7;margin-bottom:3rem}
-.hero-cta{display:flex;gap:1.2rem;flex-wrap:wrap}
-.btn-primary{background:var(--accent);color:#080B12;padding:0.85rem 2rem;border-radius:4px;font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:all 0.2s;border:none;cursor:none}
-.btn-primary:hover{background:var(--accent2);transform:translateY(-2px)}
-.btn-outline{background:transparent;color:var(--text);padding:0.85rem 2rem;border-radius:4px;font-size:0.85rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:all 0.2s;border:1px solid var(--border)}
-.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
-.hero-numbers{position:absolute;right:4rem;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:2.5rem;z-index:2}
-.stat{text-align:right}
-.stat-num{font-family:'Clash Display',sans-serif;font-size:2.8rem;font-weight:700;color:var(--accent);line-height:1}
-.stat-label{font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-top:0.3rem}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'DM Sans',sans-serif;
+  overflow-x:hidden;
+  cursor:none
+}
 
-section{padding:6rem 4rem}
-.section-tag{font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;display:flex;align-items:center;gap:0.8rem}
-.section-tag::before{content:'';display:block;width:30px;height:1px;background:var(--accent)}
-.section-title{font-family:'Clash Display',sans-serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:700;line-height:1.1;margin-bottom:3rem}
-.section-title span{color:var(--accent)}
+.cursor{
+  position:fixed;
+  width:10px;
+  height:10px;
+  background:var(--accent);
+  border-radius:50%;
+  pointer-events:none;
+  z-index:9999;
+  transform:translate(-50%,-50%);
+  transition:transform 0.1s;
+  mix-blend-mode:difference
+}
 
-.about{background:var(--bg2)}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
-.about-text p{color:var(--muted);line-height:1.8;font-size:1rem;margin-bottom:1.2rem}
-.about-text strong{color:var(--text)}
-.skills-list{display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:2rem}
-.skill-tag{background:rgba(255,255,255,0.04);border:1px solid var(--border);padding:0.45rem 1rem;border-radius:3px;font-size:0.78rem;color:var(--muted);letter-spacing:0.06em;transition:all 0.2s}
-.skill-tag:hover{border-color:var(--accent);color:var(--accent);background:rgba(232,197,71,0.07)}
-.about-right{display:flex;flex-direction:column;gap:1.5rem}
-.exp-item{background:var(--card);border:1px solid var(--border);padding:1.5rem;border-radius:6px;border-left:2px solid var(--accent)}
-.exp-title{font-family:'Syne',sans-serif;font-size:0.95rem;font-weight:700;margin-bottom:0.3rem}
-.exp-sub{font-size:0.8rem;color:var(--accent);margin-bottom:0.5rem}
-.exp-desc{font-size:0.82rem;color:var(--muted);line-height:1.6}
+.cursor-trail{
+  position:fixed;
+  width:32px;
+  height:32px;
+  border:1px solid rgba(232,197,71,0.4);
+  border-radius:50%;
+  pointer-events:none;
+  z-index:9998;
+  transform:translate(-50%,-50%);
+  transition:all 0.15s ease
+}
 
-.services{background:var(--bg)}
-.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-.service-card{background:var(--card);border:1px solid var(--border);padding:2rem;border-radius:6px;transition:all 0.3s;position:relative;overflow:hidden}
-.service-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(232,197,71,0.05) 0%,transparent 60%);opacity:0;transition:opacity 0.3s}
-.service-card:hover{border-color:rgba(232,197,71,0.3);transform:translateY(-4px)}
-.service-card:hover::before{opacity:1}
-.service-num{font-family:'Clash Display',sans-serif;font-size:3rem;font-weight:700;color:rgba(232,197,71,0.1);line-height:1;margin-bottom:1rem}
-.service-title{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:0.8rem}
-.service-desc{font-size:0.85rem;color:var(--muted);line-height:1.7}
-.service-tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:1.2rem}
-.stag{font-size:0.7rem;background:rgba(255,255,255,0.04);border:1px solid var(--border);padding:0.25rem 0.6rem;border-radius:2px;color:var(--muted)}
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:100;
+  padding:1.5rem 4rem;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border)
+}
 
-.work{background:var(--bg2)}
-.work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem}
-.work-card{background:var(--card);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:all 0.3s;cursor:none}
-.work-card:hover{border-color:rgba(232,197,71,0.3);transform:translateY(-4px)}
-.work-thumb{height:220px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
-.work-thumb.dm{background:linear-gradient(135deg,#0F1A2E 0%,#1A2B4A 100%)}
-.work-thumb.design{background:linear-gradient(135deg,#1A0F2E 0%,#2B1A4A 100%)}
-.work-thumb.video{background:linear-gradient(135deg,#0F2018 0%,#1A3A25 100%)}
-.work-thumb.photo{background:linear-gradient(135deg,#2E1A0F 0%,#4A2B1A 100%)}
-.mock-screen{width:70%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:1rem}
-.mock-bar{height:6px;background:var(--accent);border-radius:3px;margin-bottom:8px;width:60%}
-.mock-line{height:4px;background:rgba(255,255,255,0.1);border-radius:2px;margin-bottom:5px}
-.mock-line.short{width:40%}
-.mock-line.med{width:70%}
-.mock-metrics{display:flex;gap:6px;margin-top:8px}
-.mock-metric{flex:1;height:30px;background:rgba(232,197,71,0.1);border-radius:3px;border:1px solid rgba(232,197,71,0.2)}
-.mock-logo{font-family:'Clash Display',sans-serif;font-size:2rem;font-weight:700;letter-spacing:-0.02em}
-.mock-logo .dot{color:var(--accent)}
-.mock-frames{display:flex;gap:8px;align-items:flex-end}
-.mock-frame{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:4px}
-.work-info{padding:1.5rem}
-.work-cat{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.5rem}
-.work-title{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;margin-bottom:0.5rem}
-.work-desc{font-size:0.82rem;color:var(--muted);line-height:1.6}
+.logo{
+  font-family:'Clash Display',sans-serif;
+  font-size:1.1rem;
+  font-weight:600;
+  letter-spacing:0.12em;
+  color:var(--text)
+}
 
-.contact{background:var(--bg);position:relative;overflow:hidden;text-align:center}
-.contact::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(232,197,71,0.05) 0%,transparent 70%);pointer-events:none}
-.contact-content{position:relative;z-index:1;max-width:600px;margin:0 auto}
-.contact-email{font-family:'Clash Display',sans-serif;font-size:clamp(1.2rem,3vw,2rem);font-weight:600;color:var(--accent);margin:2rem 0;word-break:break-all}
-.social-links{display:flex;justify-content:center;gap:1.5rem;margin-top:2.5rem}
-.social-link{display:flex;align-items:center;gap:0.5rem;color:var(--muted);text-decoration:none;font-size:0.82rem;letter-spacing:0.06em;transition:color 0.2s;padding:0.6rem 1.2rem;border:1px solid var(--border);border-radius:3px}
-.social-link:hover{color:var(--accent);border-color:rgba(232,197,71,0.3)}
+.logo span{
+  color:var(--accent)
+}
 
-footer{background:var(--bg2);padding:2rem 4rem;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border)}
-.footer-logo{font-family:'Clash Display',sans-serif;font-size:0.9rem;font-weight:600;letter-spacing:0.1em}
-.footer-logo span{color:var(--accent)}
-.footer-copy{font-size:0.75rem;color:var(--muted)}
+.nav-links{
+  display:flex;
+  gap:2.5rem;
+  list-style:none
+}
 
-@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-.hero-content>*{animation:fadeUp 0.7s ease backwards}
-.hero-content>*:nth-child(1){animation-delay:0.1s}
-.hero-content>*:nth-child(2){animation-delay:0.2s}
-.hero-content>*:nth-child(3){animation-delay:0.3s}
-.hero-content>*:nth-child(4){animation-delay:0.4s}
+.nav-links a{
+  font-size:0.82rem;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--muted);
+  text-decoration:none;
+  transition:color 0.2s
+}
+
+.nav-links a:hover{
+  color:var(--accent)
+}
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  padding:8rem 4rem 4rem;
+  position:relative;
+  overflow:hidden
+}
+
+.hero-bg{
+  position:absolute;
+  inset:0;
+  background:
+  radial-gradient(ellipse 60% 60% at 80% 50%, rgba(232,197,71,0.06) 0%, transparent 70%),
+  radial-gradient(ellipse 40% 40% at 20% 80%, rgba(99,74,255,0.06) 0%, transparent 60%);
+  pointer-events:none
+}
+
+.hero-grid{
+  position:absolute;
+  inset:0;
+  background-image:
+  linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);
+  background-size:60px 60px;
+  pointer-events:none;
+  mask-image:radial-gradient(ellipse at center,black 0%,transparent 70%)
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:900px
+}
+
+.hero-tag{
+  display:inline-flex;
+  align-items:center;
+  gap:0.5rem;
+  background:rgba(232,197,71,0.1);
+  border:1px solid rgba(232,197,71,0.25);
+  border-radius:100px;
+  padding:0.4rem 1rem;
+  font-size:0.75rem;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:2rem
+}
+
+.hero-tag::before{
+  content:'';
+  width:6px;
+  height:6px;
+  background:var(--accent);
+  border-radius:50%;
+  animation:pulse 2s infinite
+}
+
+@keyframes pulse{
+  0%,100%{opacity:1}
+  50%{opacity:0.3}
+}
+
+.hero-name{
+  font-family:'Clash Display',sans-serif;
+  font-size:clamp(3.5rem,7vw,6.5rem);
+  font-weight:700;
+  line-height:0.95;
+  letter-spacing:-0.02em;
+  margin-bottom:1.5rem
+}
+
+.hero-name .line2{
+  color:var(--accent)
+}
+
+.hero-desc{
+  font-size:1.1rem;
+  color:var(--muted);
+  max-width:500px;
+  line-height:1.7;
+  margin-bottom:3rem
+}
+
+.hero-cta{
+  display:flex;
+  gap:1.2rem;
+  flex-wrap:wrap
+}
+
+.btn-primary{
+  background:var(--accent);
+  color:#080B12;
+  padding:0.85rem 2rem;
+  border-radius:4px;
+  font-size:0.85rem;
+  font-weight:600;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  text-decoration:none;
+  transition:all 0.2s;
+  border:none;
+  cursor:none
+}
+
+.btn-primary:hover{
+  background:var(--accent2);
+  transform:translateY(-2px)
+}
+
+.btn-outline{
+  background:transparent;
+  color:var(--text);
+  padding:0.85rem 2rem;
+  border-radius:4px;
+  font-size:0.85rem;
+  font-weight:500;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  text-decoration:none;
+  transition:all 0.2s;
+  border:1px solid var(--border)
+}
+
+.btn-outline:hover{
+  border-color:var(--accent);
+  color:var(--accent)
+}
+
+section{
+  padding:6rem 4rem
+}
+
+.section-tag{
+  font-size:0.72rem;
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:1rem;
+  display:flex;
+  align-items:center;
+  gap:0.8rem
+}
+
+.section-tag::before{
+  content:'';
+  display:block;
+  width:30px;
+  height:1px;
+  background:var(--accent)
+}
+
+.section-title{
+  font-family:'Clash Display',sans-serif;
+  font-size:clamp(2rem,4vw,3.2rem);
+  font-weight:700;
+  line-height:1.1;
+  margin-bottom:3rem
+}
+
+.section-title span{
+  color:var(--accent)
+}
+
+.resume{
+  background:var(--bg2);
+  position:relative;
+  overflow:hidden;
+  text-align:center
+}
+
+.resume::before{
+  content:'';
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:500px;
+  height:500px;
+  background:radial-gradient(circle,rgba(232,197,71,0.06) 0%,transparent 70%);
+  pointer-events:none
+}
+
+.resume-box{
+  position:relative;
+  z-index:2;
+  max-width:720px;
+  margin:0 auto;
+  background:linear-gradient(145deg,#111827,#0F1520);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:4rem 2rem;
+  transition:all 0.3s ease
+}
+
+.resume-box:hover{
+  border-color:rgba(232,197,71,0.3);
+  transform:translateY(-4px)
+}
+
+.resume-icon{
+  font-size:4rem;
+  margin-bottom:1.5rem
+}
+
+.resume-text{
+  color:var(--muted);
+  font-size:1rem;
+  line-height:1.9;
+  max-width:520px;
+  margin:0 auto 2rem
+}
+
+.resume-buttons{
+  display:flex;
+  justify-content:center;
+  gap:1rem;
+  flex-wrap:wrap
+}
+
+.contact{
+  background:var(--bg);
+  position:relative;
+  overflow:hidden;
+  text-align:center
+}
+
+.contact::before{
+  content:'';
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:600px;
+  height:600px;
+  background:radial-gradient(circle,rgba(232,197,71,0.05) 0%,transparent 70%);
+  pointer-events:none
+}
+
+.contact-content{
+  position:relative;
+  z-index:1;
+  max-width:600px;
+  margin:0 auto
+}
+
+.contact-email{
+  font-family:'Clash Display',sans-serif;
+  font-size:clamp(1.2rem,3vw,2rem);
+  font-weight:600;
+  color:var(--accent);
+  margin:2rem 0;
+  word-break:break-all
+}
+
+.social-links{
+  display:flex;
+  justify-content:center;
+  gap:1.5rem;
+  margin-top:2.5rem
+}
+
+.social-link{
+  display:flex;
+  align-items:center;
+  gap:0.5rem;
+  color:var(--muted);
+  text-decoration:none;
+  font-size:0.82rem;
+  letter-spacing:0.06em;
+  transition:color 0.2s;
+  padding:0.6rem 1.2rem;
+  border:1px solid var(--border);
+  border-radius:3px
+}
+
+.social-link:hover{
+  color:var(--accent);
+  border-color:rgba(232,197,71,0.3)
+}
+
+footer{
+  background:var(--bg2);
+  padding:2rem 4rem;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-top:1px solid var(--border)
+}
+
+.footer-logo{
+  font-family:'Clash Display',sans-serif;
+  font-size:0.9rem;
+  font-weight:600;
+  letter-spacing:0.1em
+}
+
+.footer-logo span{
+  color:var(--accent)
+}
+
+.footer-copy{
+  font-size:0.75rem;
+  color:var(--muted)
+}
+
+@media(max-width:768px){
+
+  nav{
+    padding:1rem 1.5rem
+  }
+
+  .nav-links{
+    gap:1rem
+  }
+
+  .hero{
+    padding:7rem 1.5rem 4rem
+  }
+
+  section{
+    padding:5rem 1.5rem
+  }
+
+  .resume-box{
+    padding:3rem 1.5rem
+  }
+
+  .resume-buttons{
+    flex-direction:column;
+    align-items:center
+  }
+
+  .resume-buttons a{
+    width:100%;
+    max-width:260px
+  }
+
+  footer{
+    padding:2rem 1.5rem;
+    flex-direction:column;
+    gap:1rem
+  }
+
+}
+
 </style>
 </head>
+
 <body>
 
 <div class="cursor" id="cursor"></div>
@@ -135,268 +466,181 @@ footer{background:var(--bg2);padding:2rem 4rem;display:flex;justify-content:spac
 
 <nav>
   <div class="logo">JRV<span>.</span></div>
+
   <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#work">Work</a></li>
+    <li><a href="#resume">Resume</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
 <section class="hero">
+
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
+
   <div class="hero-content">
+
     <div class="hero-tag">
       <span>Available for freelance</span>
     </div>
+
     <h1 class="hero-name">
       Jeyasurya<br>
       <span class="line2">R V</span>
     </h1>
+
     <p class="hero-desc">
-      SEO Analyst & Digital Marketer crafting performance-driven campaigns, eye-catching designs, and compelling content that converts.
+      SEO Analyst, Creative Designer & Video Editor crafting
+      performance-driven campaigns, cinematic visuals,
+      and modern digital experiences.
     </p>
+
     <div class="hero-cta">
-      <a href="#work" class="btn-primary">View My Work</a>
+      <a href="#resume" class="btn-primary">Download Resume</a>
       <a href="#contact" class="btn-outline">Let's Talk</a>
     </div>
+
   </div>
-  <div class="hero-numbers">
-    <div class="stat">
-      <div class="stat-num">2+</div>
-      <div class="stat-label">Years Experience</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">15+</div>
-      <div class="stat-label">Projects Done</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">5+</div>
-      <div class="stat-label">Happy Clients</div>
-    </div>
-  </div>
+
 </section>
 
-<section class="about" id="about">
-  <div class="about-grid">
-    <div class="about-text">
-      <div class="section-tag">About Me</div>
-      <h2 class="section-title">Creative mind meets <span>data-driven</span> strategy</h2>
-      <p>I'm Jeyasurya R V, an SEO Analyst and freelance digital marketer based in <strong>Chennai, Tamil Nadu</strong>. With a background in Data Science and a passion for design, I bridge the gap between analytical thinking and creative execution.</p>
-      <p>From crafting <strong>Google & Meta Ad campaigns</strong> to designing logos and editing cinematic reels — I bring a complete skillset to every project. Currently building my personal brand and taking on select freelance clients.</p>
-      <div class="skills-list">
-        <span class="skill-tag">SEO</span>
-        <span class="skill-tag">Google Ads</span>
-        <span class="skill-tag">Meta Ads</span>
-        <span class="skill-tag">GA4</span>
-        <span class="skill-tag">Meta Pixel</span>
-        <span class="skill-tag">Graphic Design</span>
-        <span class="skill-tag">Logo Design</span>
-        <span class="skill-tag">Poster Design</span>
-        <span class="skill-tag">Photo Editing</span>
-        <span class="skill-tag">Lightroom</span>
-        <span class="skill-tag">Photoshop</span>
-        <span class="skill-tag">Video Editing</span>
-        <span class="skill-tag">Content Creation</span>
-        <span class="skill-tag">CTR / CPC / ROAS</span>
-      </div>
-    </div>
-    <div class="about-right">
-      <div class="exp-item">
-        <div class="exp-title">Digital Marketing Intern</div>
-        <div class="exp-sub">Soflogic Systems · 2023–2024</div>
-        <div class="exp-desc">Managed performance marketing campaigns tracking CTR, CPC & ROAS. Handled social media content, SEO audits, and campaign analysis across Google and Meta platforms.</div>
-      </div>
-      <div class="exp-item">
-        <div class="exp-title">Freelance Creative Designer</div>
-        <div class="exp-sub">Self-Employed · 2024–Present</div>
-        <div class="exp-desc">Delivering logo design, poster creation, social media content, and photo color grading for local businesses and personal brands across Tamil Nadu.</div>
-      </div>
-      <div class="exp-item">
-        <div class="exp-title">Education</div>
-        <div class="exp-sub">MSc Data Science · BSc Physics · BSc IT</div>
-        <div class="exp-desc">American College, Madurai. Strong analytical foundation powering data-informed marketing decisions.</div>
-      </div>
-    </div>
-  </div>
-</section>
+<section class="resume" id="resume">
 
-<section class="services" id="services">
-  <div class="section-tag">What I Do</div>
-  <h2 class="section-title">Services I <span>Offer</span></h2>
-  <div class="services-grid">
-    <div class="service-card">
-      <div class="service-num">01</div>
-      <div class="service-title">Digital Marketing</div>
-      <div class="service-desc">Performance-driven campaigns on Google Ads & Meta Ads. Full-funnel strategy from awareness to conversion with measurable ROAS.</div>
-      <div class="service-tags">
-        <span class="stag">Google Ads</span>
-        <span class="stag">Meta Ads</span>
-        <span class="stag">SEO</span>
-        <span class="stag">GA4</span>
-        <span class="stag">Meta Pixel</span>
-      </div>
-    </div>
-    <div class="service-card">
-      <div class="service-num">02</div>
-      <div class="service-title">Graphic Design</div>
-      <div class="service-desc">Brand identity, logos, social media posts, flyers and posters. Visuals that communicate your brand story with clarity and style.</div>
-      <div class="service-tags">
-        <span class="stag">Logo Design</span>
-        <span class="stag">Photoshop</span>
-        <span class="stag">Social Posts</span>
-        <span class="stag">Flyers</span>
-      </div>
-    </div>
-    <div class="service-card">
-      <div class="service-num">03</div>
-      <div class="service-title">Photo Editing & Color Grading</div>
-      <div class="service-desc">Professional retouching, color correction and cinematic color grading for portraits, products and brand photography.</div>
-      <div class="service-tags">
-        <span class="stag">Lightroom</span>
-        <span class="stag">Photoshop</span>
-        <span class="stag">Color Grading</span>
-      </div>
-    </div>
-    <div class="service-card">
-      <div class="service-num">04</div>
-      <div class="service-title">Social Media Management</div>
-      <div class="service-desc">Content strategy, posting calendars, and creative assets for Instagram, Facebook and more — tailored to your audience and goals.</div>
-      <div class="service-tags">
-        <span class="stag">Instagram</span>
-        <span class="stag">Facebook</span>
-        <span class="stag">Content Strategy</span>
-      </div>
-    </div>
-    <div class="service-card">
-      <div class="service-num">05</div>
-      <div class="service-title">Video Editing</div>
-      <div class="service-desc">Reels, short-form videos, documentary edits, and promotional content with smooth cuts, motion and storytelling.</div>
-      <div class="service-tags">
-        <span class="stag">Reels</span>
-        <span class="stag">Short-form</span>
-        <span class="stag">Documentary</span>
-      </div>
-    </div>
-    <div class="service-card">
-      <div class="service-num">06</div>
-      <div class="service-title">Campaign Analysis</div>
-      <div class="service-desc">Deep-dive analysis of ad performance — CTR, CPC, ROAS, conversion tracking — with actionable insights to optimise spend.</div>
-      <div class="service-tags">
-        <span class="stag">CTR/CPC/ROAS</span>
-        <span class="stag">GA4</span>
-        <span class="stag">Reporting</span>
-      </div>
-    </div>
-  </div>
-</section>
+  <div class="section-tag">Resume</div>
 
-<section class="work" id="work">
-  <div class="section-tag">Portfolio</div>
-  <h2 class="section-title">Selected <span>Work</span></h2>
-  <div class="work-grid">
-    <div class="work-card">
-      <div class="work-thumb dm">
-        <div class="mock-screen">
-          <div class="mock-bar"></div>
-          <div class="mock-line med"></div>
-          <div class="mock-line short"></div>
-          <div class="mock-line med"></div>
-          <div class="mock-metrics">
-            <div class="mock-metric"></div>
-            <div class="mock-metric"></div>
-            <div class="mock-metric"></div>
-          </div>
-        </div>
-      </div>
-      <div class="work-info">
-        <div class="work-cat">Digital Marketing · Performance Ads</div>
-        <div class="work-title">Meta & Google Ad Campaigns — Soflogic Systems</div>
-        <div class="work-desc">Managed multi-channel ad campaigns tracking CTR, CPC and ROAS. Optimised audience targeting and creatives to improve conversion rates.</div>
-      </div>
+  <h2 class="section-title">
+    Download My <span>Resume</span>
+  </h2>
+
+  <div class="resume-box">
+
+    <div class="resume-icon">
+      📄
     </div>
-    <div class="work-card">
-      <div class="work-thumb design">
-        <div style="text-align:center">
-          <div class="mock-logo" style="color:#E8C547;font-size:1.8rem;letter-spacing:-0.03em">OBITO<span class="dot"> MENS</span></div>
-          <div style="font-size:0.55rem;letter-spacing:0.25em;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-top:4px">WEAR · EST. 2024</div>
-          <div style="width:40px;height:1px;background:rgba(232,197,71,0.4);margin:8px auto"></div>
-          <div style="font-size:0.5rem;letter-spacing:0.2em;color:rgba(255,255,255,0.3);text-transform:uppercase">Premium Menswear</div>
-        </div>
-      </div>
-      <div class="work-info">
-        <div class="work-cat">Logo Design · Brand Identity</div>
-        <div class="work-title">Obito Mens Wear — Brand Logo</div>
-        <div class="work-desc">Designed a bold, premium logo for a menswear brand. Clean typography with a strong identity that communicates quality and style.</div>
-      </div>
+
+    <p class="resume-text">
+      Explore my professional experience, certifications,
+      creative projects, technical skills, and freelance work
+      through my latest resume.
+    </p>
+
+    <div class="resume-buttons">
+
+      <a href="resume.pdf" download class="btn-primary">
+        Download Resume
+      </a>
+
+      <a href="resume.pdf" target="_blank" class="btn-outline">
+        Preview Resume
+      </a>
+
     </div>
-    <div class="work-card">
-      <div class="work-thumb design" style="background:linear-gradient(135deg,#120A1A 0%,#1E0F2E 100%)">
-        <div style="text-align:center">
-          <div style="font-family:'Clash Display',sans-serif;font-size:1.6rem;font-weight:700;color:#fff;letter-spacing:0.05em">KEV<span style="color:#E8C547">CEL</span></div>
-          <div style="width:50px;height:2px;background:linear-gradient(90deg,transparent,#E8C547,transparent);margin:6px auto"></div>
-          <div style="font-size:0.5rem;letter-spacing:0.18em;color:rgba(255,255,255,0.3);text-transform:uppercase">Brand Identity</div>
-        </div>
-      </div>
-      <div class="work-info">
-        <div class="work-cat">Logo Design · Branding</div>
-        <div class="work-title">Kevcel — Logo Design</div>
-        <div class="work-desc">Crafted a distinct brand identity with custom typography and visual language that sets the brand apart in its niche.</div>
-      </div>
-    </div>
-    <div class="work-card">
-      <div class="work-thumb video">
-        <div style="text-align:center">
-          <div style="width:60px;height:60px;border:2px solid rgba(232,197,71,0.5);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto">
-            <div style="width:0;height:0;border-top:12px solid transparent;border-bottom:12px solid transparent;border-left:20px solid #E8C547;margin-left:4px"></div>
-          </div>
-          <div style="font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(232,197,71,0.7);margin-top:12px">Documentary</div>
-          <div style="font-size:0.55rem;color:rgba(255,255,255,0.3);margin-top:4px">Aseel Rooster Series</div>
-        </div>
-      </div>
-      <div class="work-info">
-        <div class="work-cat">Video Editing · Documentary</div>
-        <div class="work-title">5+ clients</div>
-        <div class="work-desc">Full documentary video production covering the Aseel rooster breed — storytelling, cuts, color grading and audio sync for a compelling visual narrative.</div>
-      </div>
-    </div>
+
   </div>
+
 </section>
 
 <section class="contact" id="contact">
+
   <div class="contact-content">
-    <div class="section-tag" style="justify-content:center">Contact</div>
-    <h2 class="section-title" style="text-align:center">Let's work <span>together</span></h2>
-    <p style="color:var(--muted);font-size:1rem;line-height:1.7">Have a project in mind? Whether it's a campaign, a logo, or a full brand identity — I'd love to hear from you. Based in Chennai, available worldwide.</p>
-    <div class="contact-email">jeyasurya1212@gmail.com</div>
-    <a href="mailto:jeyasurya1212@gmail" class="btn-primary" style="display:inline-block">Send a Message</a>
-    <div class="social-links">
-      <a href="#" class="social-link">Instagram</a>
-      <a href="#" class="social-link">LinkedIn</a>
-      <a href="#" class="social-link">Behance</a>
+
+    <div class="section-tag" style="justify-content:center">
+      Contact
     </div>
+
+    <h2 class="section-title" style="text-align:center">
+      Let's work <span>together</span>
+    </h2>
+
+    <p style="color:var(--muted);font-size:1rem;line-height:1.7">
+      Have a project in mind? Whether it's video editing,
+      branding, SEO, or creative content — I'd love to hear from you.
+    </p>
+
+    <div class="contact-email">
+      jeyasurya1212@gmail.com
+    </div>
+
+    <a href="mailto:jeyasurya1212@gmail.com"
+       class="btn-primary"
+       style="display:inline-block">
+       Send a Message
+    </a>
+
+    <div class="social-links">
+
+      <a href="#" class="social-link">
+        Instagram
+      </a>
+
+      <a href="#" class="social-link">
+        LinkedIn
+      </a>
+
+      <a href="#" class="social-link">
+        Behance
+      </a>
+
+    </div>
+
   </div>
+
 </section>
 
 <footer>
-  <div class="footer-logo">JRV<span>.</span></div>
-  <div class="footer-copy">© 2025 Jeyasurya R V. All rights reserved.</div>
+
+  <div class="footer-logo">
+    JRV<span>.</span>
+  </div>
+
+  <div class="footer-copy">
+    © 2026 Jeyasurya R V. All rights reserved.
+  </div>
+
 </footer>
 
 <script>
+
 const cursor = document.getElementById('cursor');
 const trail = document.getElementById('trail');
+
 let tx=0,ty=0,cx=0,cy=0;
-document.addEventListener('mousemove',e=>{tx=e.clientX;ty=e.clientY;cursor.style.left=tx+'px';cursor.style.top=ty+'px'});
-function animTrail(){cx+=(tx-cx)*0.12;cy+=(ty-cy)*0.12;trail.style.left=cx+'px';trail.style.top=cy+'px';requestAnimationFrame(animTrail)}
-animTrail();
-document.querySelectorAll('a,button,.service-card,.work-card,.skill-tag').forEach(el=>{
-  el.addEventListener('mouseenter',()=>{cursor.style.transform='translate(-50%,-50%) scale(2)';trail.style.transform='translate(-50%,-50%) scale(0.5)'});
-  el.addEventListener('mouseleave',()=>{cursor.style.transform='translate(-50%,-50%) scale(1)';trail.style.transform='translate(-50%,-50%) scale(1)'});
+
+document.addEventListener('mousemove',e=>{
+  tx=e.clientX;
+  ty=e.clientY;
+
+  cursor.style.left=tx+'px';
+  cursor.style.top=ty+'px';
 });
-const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.style.animation='fadeUp 0.6s ease forwards'})},{threshold:0.1});
-document.querySelectorAll('.service-card,.work-card,.exp-item').forEach((el,i)=>{el.style.opacity='0';el.style.animationDelay=i*0.1+'s';obs.observe(el)});
+
+function animTrail(){
+  cx+=(tx-cx)*0.12;
+  cy+=(ty-cy)*0.12;
+
+  trail.style.left=cx+'px';
+  trail.style.top=cy+'px';
+
+  requestAnimationFrame(animTrail)
+}
+
+animTrail();
+
+document.querySelectorAll('a,button').forEach(el=>{
+
+  el.addEventListener('mouseenter',()=>{
+    cursor.style.transform='translate(-50%,-50%) scale(2)';
+    trail.style.transform='translate(-50%,-50%) scale(0.5)';
+  });
+
+  el.addEventListener('mouseleave',()=>{
+    cursor.style.transform='translate(-50%,-50%) scale(1)';
+    trail.style.transform='translate(-50%,-50%) scale(1)';
+  });
+
+});
+
 </script>
+
 </body>
 </html>
